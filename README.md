@@ -1,4 +1,4 @@
-# Analysis of inbreeding depression in Helmeted Honeyeater
+# Analysis of inbreeding depression in Helmeted Honeyeaters
 
 This repository contains scripts to run statistical analyses presented in Harrisson et al. (submitted) Pairing with a genetically dissimilar mate can reduce fitness costs of being inbred in a critically endangered bird.
 
