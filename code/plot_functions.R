@@ -72,7 +72,7 @@ ind_plot <- function(mod, data, response, plot_settings = list()) {
         col = plot_set$col_pal_line[2])
   points(data[[response]] ~ pred_data,
          pch = 16,
-         col = plot_set$col_pal[as.integer(data$Sex)],
+         col = plot_set$col_pal[as.integer(as.factor(data$Sex))],
          cex = 1.2)
   axis(1, cex.axis = plot_set$cex.axis, at = seq(min(pred_seq), max(pred_seq), length = 5),
        labels = round(seq(min(data[[plot_set$variable]], na.rm = TRUE),

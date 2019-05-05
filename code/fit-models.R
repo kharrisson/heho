@@ -10,10 +10,10 @@ source("code/plot_functions.R")
 source("code/extract_pr_pos.R")
 
 # read in data
-inddata <- read.csv("data/S1_clean_data_used_in_ind_models.csv",
+inddata <- read.csv("data/S1_clean_data_used_in_ind_models120419.csv",
                     header = TRUE,
                     stringsAsFactors = FALSE)
-nestdata <- read.csv("data/S2_clean_data_used_in_nest_models.csv",
+nestdata <- read.csv("data/S2_clean_data_used_in_nest_models120419.csv",
                      header = TRUE, 
                      stringsAsFactors = FALSE)
 
@@ -53,7 +53,7 @@ mod_bayes_LRS_HOM_mean_gs <- stan_glmer(y_LRS ~ HOM_std * Sex + mean_gs_std * Se
                                            (1 | Site) +
                                            (1 | Origin) +
                                            (1 | hatch),
-                                         data = inddata2,
+                                         data = inddata,
                                          family = poisson,
                                          iter = num_iter,
                                          chains = num_chains,
@@ -106,9 +106,9 @@ mod_bayes_fledge_nest_HOM <- stan_glmer(y_fledge_nest ~ male_HOM_std + female_HO
                                         cores = 4)
 
 # save outputs to use in plotting scripts
-saveRDS(mod_bayes_lifespan_HOM, file = "outputs/mod_bayes_lifespan_HOM.rds")
-saveRDS(mod_bayes_LRS_HOM, file = "outputs/mod_bayes_LRS_HOM.rds")
-saveRDS(mod_bayes_LRS_HOM_mean_gs, file = "outputs/mod_bayes_LRS_HOM_mean_gs.rds")
-saveRDS(mod_bayes_eggs_nest_HOM, file = "outputs/mod_bayes_eggs_nest_HOM.rds")
-saveRDS(mod_bayes_hatch_nest_HOM, file = "outputs/mod_bayes_hatch_nest_HOM.rds")
-saveRDS(mod_bayes_fledge_nest_HOM, file = "outputs/mod_bayes_fledge_nest_HOM.rds")
+saveRDS(mod_bayes_lifespan_HOM, file = "outputs/BBBmod_bayes_lifespan_HOM.rds")
+saveRDS(mod_bayes_LRS_HOM, file = "outputs/BBBmod_bayes_LRS_HOM.rds")
+saveRDS(mod_bayes_LRS_HOM_mean_gs, file = "outputs/BBBmod_bayes_LRS_HOM_mean_gs.rds")
+saveRDS(mod_bayes_eggs_nest_HOM, file = "outputs/BBBmod_bayes_eggs_nest_HOM.rds")
+saveRDS(mod_bayes_hatch_nest_HOM, file = "outputs/BBBmod_bayes_hatch_nest_HOM.rds")
+saveRDS(mod_bayes_fledge_nest_HOM, file = "outputs/BBBmod_bayes_fledge_nest_HOM.rds")
