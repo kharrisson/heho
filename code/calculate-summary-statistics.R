@@ -4,7 +4,7 @@
 # setwd("PATH/TO/DIR")
 
 # source helper functions
-source("code/helper_functions.R")
+source("code/extract_pr_pos.R")
 
 # load fitted models
 mod_bayes_lifespan_HOM <- readRDS("outputs/BBBmod_bayes_lifespan_HOM.rds")
